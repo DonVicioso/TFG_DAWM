@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:  # Nombre de un servicio
+    image: nginx:latest  # Imagen de Docker a usar
+    ports:
+      - "8080:80"  # Mapeo de puertos
+  database: # Nombre de otro servicio
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql  # Volumen persistente
+    environment:
+      MYSQL_ROOT_PASSWORD: mypassword  # Variables de entorno
+  # ... puedes definir más servicios aquí 
+
+volumes:
+  db_data: # Nombre del volumen
