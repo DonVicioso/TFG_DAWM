@@ -1,0 +1,50 @@
+$theme-colors: (
+  'primary' : #1D1E1B,
+  'secondary': #E05729,
+  'tertiary' : white
+);
+@import url('https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'MiFuente';
+  src: url('evil.otf') format('truetype');
+  /* Si tienes diferentes formatos de fuente, puedes incluirlos aquí */
+}
+
+$btn-font-family:'MiFuente', sans-serif;
+$btn-font-size:1.5rem;
+$btn-border-width:2px;
+$btn-hover-color:white;
+/* Luego, puedes aplicar la fuente a elementos específicos */
+$headings-font-family: 'MiFuente';
+
+$input-bg: transparent; // Fondo transparente
+$input-border-color: #E05729; // Borde transparente
+$input-color: white;
+$input-border-width: 2px;
+$input-placeholder-color: #999;
+$input-font-family: 'MiFuente', sans-serif;
+
+.loginForm{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:  map-get($theme-colors, 'primary'); /* Color de fondo del div */
+  padding: 20px; /* Espacio interior del div */ 
+  border-radius: 10px;
+  width: 60%;
+  color: map-get($theme-colors, 'tertiary')
+
+}
+
+.backdrop{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+@import '~bootstrap/scss/bootstrap';
