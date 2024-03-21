@@ -16,7 +16,7 @@ pub fn run(listener: TcpListener) -> Result<Server, std::io::Error> {
                     .allowed_header(http::header::CONTENT_TYPE)
                     .max_age(3600) // Opcional (pre-flight)
             )
-            .service(Files::new("/", "./Front").index_file("index.html"))
+            .service(Files::new("/", "/Front/public").index_file("index.html"))
     })
         .listen(listener)?
         .run();
