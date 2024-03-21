@@ -1,16 +1,19 @@
 version: '3'
 services:
-  web:  # Nombre de un servicio
-    image: nginx:latest  # Imagen de Docker a usar
+  back1:
+    build: ./Back
     ports:
-      - "8080:80"  # Mapeo de puertos
-  database: # Nombre de otro servicio
-    image: mysql:5.7
-    volumes:
-      - db_data:/var/lib/mysql  # Volumen persistente
-    environment:
-      MYSQL_ROOT_PASSWORD: mypassword  # Variables de entorno
-  # ... puedes definir más servicios aquí 
-
-volumes:
-  db_data: # Nombre del volumen
+      - "3001:3000"
+  back2:
+    build: ./Back
+    ports:
+      - "3002:3000"
+  database:
+    build: ./DB
+    ports:
+      - "3306:3306"
+  proxy:
+    build: ./Proxy
+    ports:
+      - "80:80"
+      - "443:443"

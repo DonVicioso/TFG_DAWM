@@ -2,7 +2,12 @@
 name = "TicketBurst"
 version = "0.1.0"
 edition = "2021"
-
+[buid]
+resources = ["Front/*"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+tokio = { version = "*", features = ["rt", "rt-multi-thread", "macros"] }
+actix-web = "*"
+actix-files = "*"
+actix-cors = "*"
