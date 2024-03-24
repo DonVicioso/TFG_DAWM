@@ -24,11 +24,11 @@
   height: 100%;
 }
 
-.btn-outline-secondary {
-  --bs-btn-hover-color: white;
-}
-.btn-outline-secondary:hover {
-  --bs-btn-color: white;
+label {
+  cursor: pointer;
+  color: #E05729;
+  font-size: 1rem;
+  font-family: "MiFuente";
 }
 
 /*!

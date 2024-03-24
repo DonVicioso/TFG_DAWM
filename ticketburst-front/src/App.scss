@@ -44,7 +44,12 @@ $input-font-family: 'MiFuente', sans-serif;
   height: 100%;
 }
 
-
+label{
+  cursor: pointer;
+  color: #E05729;
+  font-size: 1rem;
+  font-family: 'MiFuente';
+}
 
 
 @import '~bootstrap/scss/bootstrap';
