@@ -6,9 +6,14 @@ import { useState, useEffect } from 'react';
 function App() {
 
   const [displayForm, setDisplayForm] = useState(false);
+  const [isLoggedIn, setIsLoggedIn]= useState(false)
 
   function handleDisplay(){
     setDisplayForm(prevState=>!prevState)
+  }
+
+  function handleLogginSuccess(){
+    setIsLoggedIn(true)
   }
 
   function handleClickOut(event){
@@ -21,9 +26,9 @@ function App() {
     <div>
     <NavigationBar handleDisplayLogin={handleDisplay}/>
 
-    {displayForm && 
+    {displayForm && !isLoggedIn && 
     <div onClick={handleClickOut} className='backdrop'>
-    <LoginForm/>
+    <LoginForm onLoginSuccess={handleLogginSuccess}/>
     </div>
     }
     </div>
